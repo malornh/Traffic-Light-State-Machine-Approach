@@ -32,4 +32,18 @@
   .off {
     background-color: rgba(65, 65, 65, 0.811);
   }
+
+  .broken {
+    animation: broken-colors 1s infinite alternate;
+  }
+  
+  @keyframes broken-colors {
+    0% {
+      background-color: yellow;
+    }
+    100% {
+      background-color: rgba(65, 65, 65, 0.811);
+    }
+  }
+  
   
