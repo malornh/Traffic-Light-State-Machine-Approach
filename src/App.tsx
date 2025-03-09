@@ -14,7 +14,7 @@ const App: React.FC = () => {
       <div className="buttons-container">
         <button className="button" onClick={() => send({type: 'SWITCH'})}>Switch</button>
         <button className="button" onClick={() => send({type: 'BROKEN'})}>Broken</button>
-        <button className="button" onClick={() => send({type: 'RESET'})}>Reset</button>
+        <button className="button" onClick={() => send({type: 'RESTART'})}>Restart</button>
       </div>
     </div>
   );
