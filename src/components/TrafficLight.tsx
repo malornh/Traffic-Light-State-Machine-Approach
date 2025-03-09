@@ -1,26 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import './TrafficLight.css';
+import { TrafficLightStates } from "./states/TrafficLightStates";
 
-type TrafficLightColor = 'red' | 'yellow' | 'green';
-
-interface Props
-{
-    color: TrafficLightColor;
+interface TrafficLightProps {
+  state: any;
 }
 
-
-const TrafficLight: React.FC<Props> = ({color}) => {
+const TrafficLight: React.FC<TrafficLightProps> = ({ state }) => {
 
   return (
     <div className="traffic-light-container">
       <div
-        className={`light ${color === 'red' ? 'red' : 'off'}`}
+        className={`light ${
+          state.matches(TrafficLightStates.RED) ||
+          state.matches(TrafficLightStates.RED_YELLOW) ? 'red' : 'off'}`}
       />
+    <div
+      className={`light 
+        ${state.matches(TrafficLightStates.RED_YELLOW) ? 'yellow' : ''} 
+        ${state.matches(TrafficLightStates.BROKEN) ? 'broken' : ''} 
+        ${!state.matches(TrafficLightStates.RED_YELLOW) && !state.matches(TrafficLightStates.BROKEN) ? 'off' : ''}`
+      }
+    />
       <div
-        className={`light ${color === 'yellow' ? 'yellow' : 'off'}`}
-      />
-      <div
-        className={`light ${color === 'green' ? 'green' : 'off'}`}
+        className={`light ${state.matches(TrafficLightStates.GREEN) ? 'green' : 'off'}`}
       />
     </div>
   );

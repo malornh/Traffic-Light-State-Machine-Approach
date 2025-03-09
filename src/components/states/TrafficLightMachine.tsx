@@ -1,7 +1,12 @@
 import { createMachine } from "xstate";
-import { TrafficLightStates } from "./trafficLightEnum";
+import { TrafficLightStates } from "./TrafficLightStates";
 
-export const trafficLightMachine = createMachine({
+export type TrafficLightEvent =
+  | { type: 'SWITCH' }
+  | { type: 'BROKEN' }
+  | { type: 'RESTART' };
+
+export const TrafficLightMachine = createMachine({
   id: "trafficLight",
   initial: TrafficLightStates.RED,
   states: {
