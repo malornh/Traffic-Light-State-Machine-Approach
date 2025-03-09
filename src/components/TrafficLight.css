@@ -1,0 +1,35 @@
+.traffic-light-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 8%;
+    height: 30%;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-around;
+  }
+  
+  .light {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 10px 0;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .off {
+    background-color: rgba(65, 65, 65, 0.811);
+  }
+  
